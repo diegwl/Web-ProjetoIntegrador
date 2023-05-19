@@ -1,0 +1,137 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    height: 120px;
+    background-color: #F6EBDA;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 990px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+nav ul, nav li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+nav a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #727272;
+    transition: linear 0.2s;
+    border-radius: 15px;
+}
+
+nav img {
+    height: 80px;
+}
+
+nav a:hover {
+    background-color: #ffaa2a;
+    color: #ffffff;
+}
+
+#banner {
+    display: flex;
+    justify-content: center;
+    background-image: url(../imgs/bg_img_hero\ \(1\).png);
+    background-position: left top;
+    background-repeat:repeat-x;
+    background-size: 300px;
+    height: 450px;
+    background-color: #F6EBDA;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.banner_headline {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner_headline h1 {
+    color: #ffaa2a;
+    font-size: 55px;
+    -webkit-text-stroke: 0.4px #2F2105;
+    margin: 0;
+    padding: 0;
+    max-width: 600px;
+}
+
+.banner_headline h2 {
+    color: #2F2105;
+    font-size: 21px;
+    -webkit-text-stroke: 0.4px #ffaa2a;
+    margin: 0;
+    padding: 0;
+    max-width: 350px;
+    margin-top: 30px;
+}
+
+#banner_img {
+    background-color: #2F2105;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../imgs/Exclude.png);
+    background-size:contain;
+    background-position:  center;
+    background-repeat: no-repeat;
+    padding:45px 5px;
+}
+
+main {
+    background-color: #F9D9AA;
+    height: 100px;
+}
+
+.widget {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #FFD28F;
+    border-radius: 15px;
+
+}
+
+.widget_text {
+    display: flex;
+    justify-content: space-between;
+}
