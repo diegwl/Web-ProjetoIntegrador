@@ -1,3 +1,9 @@
+/* Tela Principal */
+
+::-webkit-scrollbar {
+    display: none;
+    }
+
 *{
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -6,6 +12,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+main {
+    background-color: #F9D9AA;
+    min-height: 399px;
 }
 
 header {
@@ -19,6 +30,23 @@ header {
     display: flex;
     justify-content: space-between;
     width: 990px;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container3 {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+}
+
+a {
+    text-decoration: none;
+    color: #2F2105;
 }
 
 .logo {
@@ -35,6 +63,8 @@ nav ul, nav li {
     list-style: none;
     margin: 0;
     padding: 0;
+    color: #2F2105;
+    font-weight: bold;
 }
 
 nav ul {
@@ -48,13 +78,13 @@ nav a {
     padding: 15px;
     text-decoration: none;
     text-transform: uppercase;
-    color: #727272;
+    color: #000000;
     transition: linear 0.2s;
     border-radius: 15px;
 }
 
 nav img {
-    height: 80px;
+    height: 50px;
 }
 
 nav a:hover {
@@ -109,16 +139,11 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(../imgs/Exclude.png);
+    background-image: url(../imgs/Exclude2.png);
     background-size:contain;
     background-position:  center;
     background-repeat: no-repeat;
     padding:45px 5px;
-}
-
-main {
-    background-color: #F9D9AA;
-    height: 100px;
 }
 
 .widget {
@@ -128,10 +153,127 @@ main {
     background-color: #ffffff;
     border: 1px solid #FFD28F;
     border-radius: 15px;
+    transition: linear 0.2s;
+}
 
+.no_border {
+    border: 0px
 }
 
 .widget_text {
+    margin-top: 17px;
     display: flex;
+    justify-content: space-between;
+}
+
+.widget_text h3 {
+    font-size: 24px;
+}
+
+.produtos {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+    min-height: 370px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+a .widget:hover {
+    transform: scale(1.02);
+}
+
+#banner2 {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffffff;
+    padding: 40px;
+}
+
+.widget h1 {
+    margin: 10px 0;
+    font-size: 28px;
+    color: #2F2105;
+}
+
+.widget p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #2F2105;
+}
+
+.widget_image {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#banner3 {
+    display: flex;
+    justify-content: space-around;
+    background-color: #F6EBDA;
+    padding: 40px;
+    background-image: url(../imgs/Exclude2.png);
+    background-repeat: repeat-x;
+    background-position: center;
+    min-height: 484px;
+}
+
+#text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 600px;
+}
+
+#text h1 {
+    margin: 40px 0;
+    padding: 0;
+    color: #2F2105;
+    font-size: 60px;
+}
+
+#text h2 {
+    margin: 10px 0;
+    padding: 0;
+    color: #ffaa2a;
+    font-size: 30px;
+}
+
+#text p {
+    margin: 0;
+    padding: 0;
+    color: #2F2105;
+    font-size: 18px;
+}
+
+footer {
+    background-image: url(../imgs/unsplash_ftA71vetxuo.png);
+    min-height: 390px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+#text_footer {
+    color: #ffffff;
+    width: 600px; 
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Tela de Produtos */
+
+.container_produtos {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
