@@ -105,8 +105,15 @@ let produtos = [
 
 var pos = 1
 
+
 function AddCarrinho(produto, qtd, valor, posicao)
 	{
+        for(i=1; i<=99; i++) {
+            var prod = localStorage.getItem("produto" + i + "");
+            if(prod != null) {
+                posicao = posicao + 1
+            }
+        }
         posicao = posicao + 1
         console.log(pos)
 		localStorage.setItem("produto" + posicao, produto);
