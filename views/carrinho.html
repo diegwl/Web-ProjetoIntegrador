@@ -4,34 +4,99 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../assets/css/carrinho_style.css" type="text/css">
+    <link rel="stylesheet" href="../assets/css/style.css" type="text/css">
+	<title>Coffe Street</title>
 </head>
 <body>
-	<div id="itens"> </div>
-<div>Total: <span id="total"></span> </div>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html"><img src="../assets/imgs/Logo@2x.png" alt="Logo"></a>
+            </div>
+            <div class="menu">
+                <nav>
+                    <div class="menu_mobile">
+                        <div class="mm_line"></div>
+                        <div class="mm_line"></div>
+                        <div class="mm_line"></div>
+                    </div>
+                    <ul>
+                        <li><a href="../index.html">home</a></li>
+                        <li><a href="../views/products.html">products</a></li>
+                        <li><a href="../index.html#banner2">about us</a></li>
+                        <li><a href="#text_footer">contact</a></li>
+                        <a href="../views/carrinho.html"><img src="../assets/imgs/cart-shopping-solid.svg" alt="Carrinho"></a>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
+    <main>
+        <div class="carrinho">
+            <div class="itens_div">
+                <div id="itens"></div>
+                
+            </div>
+            <div class="line">
+                <div id="total_div">Total: U$<span id="total"></span> </div>
+                <div id="botoes">
+                    <button type="button" onclick=" localStorage.clear(); location.reload();"> Finalizar Compra </button>
+                    <button type="button" onclick=" localStorage.clear(); location.reload();"> Limpar Carrinho </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div id="mapa"> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3594.061282917233!2d-73.97614051493233!3d40.75689431468718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNova%20Iorque%2C%20NY%2C%20EUA!5e0!3m2!1spt-BR!2sbr!4v1684950243374!5m2!1spt-BR!2sbr" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div id="text_footer">
+            <div>
+                <h1>Contact</h1>
+                <p>+55 19 99498-2726</p>
+                <h2>Social medias</h2>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                <a href="https://www.linkedin.com/in/diego-castan-lopes/" target="_blank"><i class="fa-brands fa-linkedin fa-4x" style="color: #ffffff;"></i></a>
+                <a href="https://www.instagram.com/diegwll/" target="_blank"><i class="fa-brands fa-instagram fa-4x" style="color: #ffffff;"></i></a>
+            </div>
+            <p>All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
- var total = 0; 
- var i = 0;     
- var valor = 0; 
- 
- for(i=1; i<=99; i++) 
- {
-	 var prod = localStorage.getItem("produto" + i + ""); 
-	 if(prod != null) 
-	 {	
-		 document.getElementById("itens").innerHTML += localStorage.getItem("qtd" + i) + " x ";
-		 document.getElementById("itens").innerHTML += localStorage.getItem("produto" + i);
-		 document.getElementById("itens").innerHTML += " ";
-		 document.getElementById("itens").innerHTML += "U$: " + localStorage.getItem("valor" + i) + "<hr>";
-		 
-		 valor = parseFloat(localStorage.getItem("valor" + i)); 
-		 total = (total + valor);
-	 }
- }
- document.getElementById("total").innerHTML = total.toFixed(2); 
+	var total = 0; // variável que retorna o total dos produtos que estão na LocalStorage.
+    var i = 0;     // variável que irá percorrer as posições
+    var valor = 0; // variável que irá receber o preço do produto convertido em Float.
+    var vazio = 0;
+    
+    for(i=1; i<=99; i++) // verifica até 99 produtos registrados na localStorage
+    {
+        var prod = localStorage.getItem("produto" + i + ""); // verifica se há recheio nesta posição. 
+        if(prod != null) 
+        {	
+            // exibe os dados da lista dentro da div itens
+            let section = "<section> <img class='img_produto' src='" + localStorage.getItem("img" + i) + "' alt=''>"+
+                localStorage.getItem("qtd" + i) + " x "+
+                localStorage.getItem("produto" + i)+
+                " "+
+                "U$: " + localStorage.getItem("valor" + i) + "</section>";
+			document.getElementById("itens").innerHTML += section;
+            
+            
+            // calcula o total dos recheios
+            valor = parseFloat(localStorage.getItem("valor" + i)); // valor convertido com o parseFloat()
+            total = (total + valor); // arredonda para 2 casas decimais com o .toFixed(2)
+        }
+        else {
+            vazio++
+        }
+    } 
+    // exibe o total dos recheios
+    document.getElementById("total").innerHTML = total.toFixed(2);
 </script>
-
-<button type="button" onclick=" localStorage.clear(); location.reload();"> Limpar carrinho </button>
 </body>
 </html>
