@@ -83,11 +83,22 @@
 
     #itens section {
         font-size: 18px;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    #itens section p {
+        margin: 0;
+        gap: 0;
     }
 
     .line {
-        width: 200px;
+        width: 250px;
         flex-direction: column;
+    }
+
+    #total_div {
+        font-size: 23px;
     }
 
     #botoes {
@@ -103,7 +114,16 @@
         gap: 20px;
     }
 
+    #itens section p {
+        margin: 0;
+        gap: 0;
+    }
+
     .line {
         width: 250px;
+    }
+
+    #total_div {
+        font-size: 23px;
     }
 }
