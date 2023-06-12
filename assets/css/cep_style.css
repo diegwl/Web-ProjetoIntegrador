@@ -1,0 +1,59 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+#infos {
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 25px;
+    border-radius: 15px;
+    background-color: #ffaa2a;
+    border: 3px solid #2F2105;
+    justify-content: flex-start;
+}
+
+#infos section {
+    display: flex;
+    gap: 20px;
+}
+
+#cidade {
+    width: 200px;
+}
+
+#uf {
+    width: 50px;
+}
+
+#rua {
+    width: 300px;
+}
+
+#numero {
+    width: 70px;
+}
+
+@media (max-width: 1400px) {
+    main {
+        padding: 70px 30px;
+    }
+    #infos {
+        width: 470px;
+        height: 400px;
+        flex-direction: column;
+    }
+    #infos section {
+        justify-content: space-between;
+        gap: 20px;
+    }
+    #infos article {
+        width: 80%;
+    }
+}
