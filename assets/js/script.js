@@ -102,23 +102,35 @@ let produtos = [
     }
 ];
 
+let Carrinho = {}
 
 var pos = 1
-
+var p
 
 function AddCarrinho(produto, qtd, valor, img, posicao)
 	{
         for(i=1; i<=99; i++) {
-            var prod = localStorage.getItem("produto" + i + "");
+            var prod = localStorage.getItem(i);
             if(prod != null) {
                 posicao = posicao + 1
-            }
+            } else {break}
         }
-        posicao = posicao + 1
         console.log(pos)
-        localStorage.setItem("img" + posicao, img)
+        valor = valor * qtd;
+		
+        p = {
+            "img" : img,
+            "produto" : produto,
+            "qtd" : qtd,
+            "valor" : valor
+        }
+        var json_string = JSON.stringify(p)
+
+        localStorage.setItem(posicao, json_string)
+        posicao = posicao + 1
+
+        /*localStorage.setItem("img" + posicao, img)
 		localStorage.setItem("produto" + posicao, produto);
 		localStorage.setItem("qtd" + posicao, qtd);
-		valor = valor * qtd;
-		localStorage.setItem("valor" + posicao, valor);
+		localStorage.setItem("valor" + posicao, valor);*/
 	}

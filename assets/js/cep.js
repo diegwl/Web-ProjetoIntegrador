@@ -31,10 +31,39 @@ const forma = (value) => {
 }
 
 function compra() {
+    var compra = false
+    for(i=1; i<=99; i++) 
+    {
+        var prod = localStorage.getItem(i); 
+        var p = JSON.parse(prod)
+        console.log(p)
+        if(p != null) 
+        {
+            compra = true
+        }
+    }
     let validacao = cep.value
-    fetch(`https://viacep.com.br/ws/${validacao}/json/`)
-    .then(()=> {alert("Compra Finalizada")})
-    .catch((e) => {
-        alert("Endereço Errado")
-    })
+    if (compra == true){
+        fetch(`https://viacep.com.br/ws/${validacao}/json/`)
+        .then(()=> {Swal.fire(
+        'You completed purchase!',
+        'Thanks to buy with us.',
+        'success')
+        localStorage.clear()
+        })
+        .catch((e) => {
+        Swal.fire(
+            'An error happened!',
+            'The adress is wrong.',
+            'error'
+          )
+        })
+    }
+    else {
+        Swal.fire(
+            'An error happened!',
+            'You dont have products in the shopping cart',
+            'error'
+          )
+    }
 }

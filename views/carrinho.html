@@ -44,7 +44,7 @@
             <div class="line">
                 <div id="total_div">Total: U$<span id="total"></span> </div>
                 <div id="botoes">
-                    <a href="./cep.html"><button type="button"> Checkout </button></a>
+                    <a href="./cep.html"><button type="button"> Delivery </button></a>
                     <button type="button" onclick=" localStorage.clear(); location.reload();"> Clear Cart </button>
                 </div>
             </div>
@@ -78,20 +78,22 @@
     
     for(i=1; i<=99; i++) // verifica até 99 produtos registrados na localStorage
     {
-        var prod = localStorage.getItem("produto" + i + ""); // verifica se há recheio nesta posição. 
-        if(prod != null) 
+        var prod = localStorage.getItem(i); // verifica se há recheio nesta posição. 
+        var p = JSON.parse(prod)
+        console.log(p)
+        if(p != null) 
         {	
             // exibe os dados da lista dentro da div itens
-            let section = "<section> <img class='img_produto' src='" + localStorage.getItem("img" + i) + "' alt=''>"+
-                "<p>"+ localStorage.getItem("qtd" + i) + " x "+
-                localStorage.getItem("produto" + i)+ "</p>" +
+            let section = "<section> <img class='img_produto' src='" + p.img + "' alt=''>"+
+                "<p>"+ p.qtd + " x "+
+                p.produto+ "</p>" +
                 " "+
-                "<p>" + "U$: " + localStorage.getItem("valor" + i) + "</p>" + "</section>";
+                "<p>" + "U$: " + p.valor + "</p>" + "</section>";
 			document.getElementById("itens").innerHTML += section;
             
             
             // calcula o total dos recheios
-            valor = parseFloat(localStorage.getItem("valor" + i)); // valor convertido com o parseFloat()
+            valor = parseFloat(p.valor); // valor convertido com o parseFloat()
             total = (total + valor); // arredonda para 2 casas decimais com o .toFixed(2)
         }
         else {
