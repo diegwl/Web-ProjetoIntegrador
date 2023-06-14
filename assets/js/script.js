@@ -1,4 +1,6 @@
 window.onload = function() {
+    document.querySelector('head').innerHTML += "<link rel='icon' type='image/x-icon' href='../assets/imgs/xicara.png'>"
+
     document.querySelector(".menu_mobile").addEventListener("click", function(){
         if(document.querySelector(".menu nav ul").style.display == "flex") {
             document.querySelector(".menu nav ul").style.display = "none";
