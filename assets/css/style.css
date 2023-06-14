@@ -94,7 +94,7 @@ nav img {
 
 nav a:hover {
     background-color: #ffaa2a;
-    color: #ffffff;
+    color:aliceblue;
 }
 
 #banner {
@@ -318,6 +318,20 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 40px;
+}
+
+#download {
+    border: 1px solid #2F2105;
+    padding: 15px;
+    border-radius: 25px;
+    background-color: #FFD28F;
+    transition: linear 0.2s;
+    margin-bottom: 30px;
+}
+
+#download:hover {
+    background-color: #f8b54f;
 }
 
 

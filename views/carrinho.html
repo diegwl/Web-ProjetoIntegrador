@@ -70,38 +70,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="../assets/js/script.js"></script>
-<script>
-	var total = 0; // variável que retorna o total dos produtos que estão na LocalStorage.
-    var i = 0;     // variável que irá percorrer as posições
-    var valor = 0; // variável que irá receber o preço do produto convertido em Float.
-    var vazio = 0;
-    
-    for(i=1; i<=99; i++) // verifica até 99 produtos registrados na localStorage
-    {
-        var prod = localStorage.getItem(i); // verifica se há recheio nesta posição. 
-        var p = JSON.parse(prod)
-        console.log(p)
-        if(p != null) 
-        {	
-            // exibe os dados da lista dentro da div itens
-            let section = "<section> <img class='img_produto' src='" + p.img + "' alt=''>"+
-                "<p>"+ p.qtd + " x "+
-                p.produto+ "</p>" +
-                " "+
-                "<p>" + "U$: " + p.valor + "</p>" + "</section>";
-			document.getElementById("itens").innerHTML += section;
-            
-            
-            // calcula o total dos recheios
-            valor = parseFloat(p.valor); // valor convertido com o parseFloat()
-            total = (total + valor); // arredonda para 2 casas decimais com o .toFixed(2)
-        }
-        else {
-            vazio++
-        }
-    } 
-    // exibe o total dos recheios
-    document.getElementById("total").innerHTML = total.toFixed(2);
-</script>
+<script src="../assets/js/carrinho.js"></script>
 </body>
 </html>

@@ -119,6 +119,7 @@ function AddCarrinho(produto, qtd, valor, img, posicao)
         valor = valor * qtd;
 		
         p = {
+            "id" : pos,
             "img" : img,
             "produto" : produto,
             "qtd" : qtd,

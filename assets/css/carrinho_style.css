@@ -75,6 +75,14 @@
     opacity: 95%;
 }
 
+.x {
+    all: unset;
+    cursor: pointer;
+    outline: revert;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
 @media (max-width: 900px) {
     .itens_div {
         width: 250px;

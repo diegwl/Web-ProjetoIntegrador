@@ -1,5 +1,5 @@
 main {
-    background-color: #f5f5f5;
+    background-color: #F9D9AA;
     padding: 5% 16%;
     display: flex;
     flex-direction: column;
@@ -16,6 +16,8 @@ main {
     height: 100%;
     flex-direction: column;
     text-align: center;
+    border-radius: 10px;
+    border: 3px solid #ffaa2a88;
 }
 
 #grid {
@@ -67,9 +69,13 @@ main {
     margin-top: 0.2rem;
     background-color: #f5f5f5;
     font-size: 1rem;
-    color: #000;
     border: 1px solid #000;
-    border-radius: 5px; 
+    border-radius: 25px;
+    transition: linear 0.2s;
+}
+
+#button-form:hover {
+    background-color: #adadad;
 }
 
 
