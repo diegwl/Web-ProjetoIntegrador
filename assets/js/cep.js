@@ -45,10 +45,13 @@ function compra() {
     let validacao = cep.value
     if (compra == true){
         fetch(`https://viacep.com.br/ws/${validacao}/json/`)
-        .then(()=> {Swal.fire(
-        'You completed purchase!',
-        'Thanks to buy with us.',
-        'success')
+        .then(()=> {Swal.fire({
+        title:'You completed purchase!',
+        text:'Thanks to buy with us.',
+        icon:'success',
+        confirmButtonText: 'OK',
+        isConfirmed: false
+        })
         localStorage.clear()
         })
         .catch((e) => {
@@ -63,7 +66,7 @@ function compra() {
         Swal.fire(
             'An error happened!',
             'You dont have products in the shopping cart',
-            'error'
+            'error',
           )
     }
 }
