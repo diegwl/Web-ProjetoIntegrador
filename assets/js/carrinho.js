@@ -11,7 +11,7 @@ window.onload = function(){
         if(p != null) 
         {	
             // exibe os dados da lista dentro da div itens
-            let section = "<section id='item'" + pos + "> <img class='img_produto' src='" + p.img + "' alt=''>"+
+            let section = "<section id='item'" + i + "> <img class='img_produto' src='" + p.img + "' alt=''>"+
                 "<p>"+ p.qtd + " x "+
                 p.produto+ "</p>" +
                 " "+
@@ -32,15 +32,7 @@ window.onload = function(){
 
     var botoes_delete = document.querySelectorAll(".x");
     botoes_delete.forEach(bt_del => bt_del.addEventListener("click", excluir));
-}
 
-excluir = (item) => {
-    var x = item.target.parentElement.parentElement;
-    localStorage.removeItem(`${x.id.substr(4, x.id.length - 1)}` + 1);
-    location.reload()
-}
-
-window.onload = function() {
     document.querySelector('head').innerHTML += "<link rel='icon' type='image/x-icon' href='../assets/imgs/xicara.png'>"
 
     document.querySelector(".menu_mobile").addEventListener("click", function(){
@@ -49,4 +41,11 @@ window.onload = function() {
         } else {
             document.querySelector(".menu nav ul").style.display = "flex";
         }
-    })}
+    })
+}
+
+excluir = (item) => {
+    var x = item.target.parentElement.parentElement;
+    localStorage.removeItem(`${x.id.substr(4, x.id.length - 1)}` + 1);
+    location.reload()
+}
