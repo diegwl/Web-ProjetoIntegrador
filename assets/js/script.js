@@ -1,4 +1,6 @@
-window.onload = function() {
+ // A função é carregada assim que a página é carregada.
+window.onload = function() { 
+    // Configuração do menu mobile, para que quando clicarmos no icone, ele mostre as opções.
     document.querySelector('head').innerHTML += "<link rel='icon' type='image/x-icon' href='../assets/imgs/xicara.png'>"
 
     document.querySelector(".menu_mobile").addEventListener("click", function(){
@@ -9,6 +11,7 @@ window.onload = function() {
         }
     });
 
+    // Na página específica de cada produto, ele analisa uma div que possui o nome do produto e carrega sua informações de um json
         var nome = document.getElementById("nomejs").innerHTML
         produtos.forEach(produto => {
             console.log(produto)
@@ -40,7 +43,7 @@ window.onload = function() {
         });
 };
 
-
+// json com nome, preço e imagem de cada um dos produtos da loja 
 let produtos = [
     {
         produto: "Vanilla Latte",
@@ -104,11 +107,10 @@ let produtos = [
     }
 ];
 
-let Carrinho = {}
-
 var pos = 1
 var p
-
+// função que adiciona o produto ao carrinho no local storage, na forma de um json, com id, imagem, produto, quantidade e valor. 
+// Essa função é acionada ao clicar no icone de adicionar ao carrinho.
 function AddCarrinho(produto, qtd, valor, img, posicao)
 	{
         for(i=1; i<=99; i++) {
@@ -131,9 +133,4 @@ function AddCarrinho(produto, qtd, valor, img, posicao)
 
         localStorage.setItem(posicao, json_string)
         posicao = posicao + 1
-
-        /*localStorage.setItem("img" + posicao, img)
-		localStorage.setItem("produto" + posicao, produto);
-		localStorage.setItem("qtd" + posicao, qtd);
-		localStorage.setItem("valor" + posicao, valor);*/
 	}
