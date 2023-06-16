@@ -119,11 +119,11 @@ function AddCarrinho(produto, qtd, valor, img, posicao)
                 posicao = posicao + 1
             } else {break}
         }
-        console.log(pos)
+    
         valor = valor * qtd;
 		
         p = {
-            "id" : pos,
+            "id" : posicao,
             "img" : img,
             "produto" : produto,
             "qtd" : qtd,
