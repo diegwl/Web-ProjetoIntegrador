@@ -4,6 +4,7 @@ window.onload = function(){
     var i = 0;     // variável que irá percorrer as posições
     var valor = 0; // variável que irá receber o preço do produto convertido em Float.
     var vazio = 0; // variável que vai armazenar o número de posições vazias
+    var item = 1;
     
     for(i=1; i<=99; i++) // verifica até 99 produtos registrados na localStorage
     {
@@ -12,14 +13,14 @@ window.onload = function(){
         if(p != null) 
         {	
             // exibe os dados da lista dentro da div itens
-            let section = "<section id='item'" + i + "> <img class='img_produto' src='" + p.img + "' alt=''>"+
+            let section = "<section id='item'" + item + "> <img class='img_produto' src='" + p.img + "' alt=''>"+
                 "<p>"+ p.qtd + " x "+
                 p.produto+ "</p>" +
                 " "+
                 "<p>" + "U$: " + p.valor + "</p>" + "<button class='x' type='button'><i class='fa-solid fa-xmark fa-2xl'></i></button>" +"</section>";
 			document.getElementById("itens").innerHTML += section;
             
-            
+            item += 1
             // calcula o total do valor dos produtos
             valor = parseFloat(p.valor); // valor convertido com o parseFloat()
             total = (total + valor); // arredonda para 2 casas decimais com o .toFixed(2)
