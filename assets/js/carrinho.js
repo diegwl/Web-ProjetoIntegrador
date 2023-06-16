@@ -17,7 +17,7 @@ window.onload = function(){
                 "<p>"+ p.qtd + " x "+
                 p.produto+ "</p>" +
                 " "+
-                "<p>" + "U$: " + p.valor + "</p>" + "<button class='x' type='button'><i class='fa-solid fa-xmark fa-2xl'></i></button>" +"</section>";
+                "<p>" + "U$: " + p.valor + "</p>" + "<i class='fa-solid fa-xmark fa-2xl x'></i>" +"</section>";
 			document.getElementById("itens").innerHTML += section;
             
             item += 1
