@@ -58,7 +58,7 @@ window.onload = function(){
 excluir = (item) => {
     var x = item.target.parentElement.parentElement;
 	console.log(x)
-	console.log(`${x.id.substr(4, x.id.length - 1)}` + 1)
-    localStorage.removeItem(`${x.id.substr(4, x.id.length - 1)}` + 1);
+	console.log(`${x.id.substr(4, x.id.length - 1)}`)
+    localStorage.removeItem(`${x.id.substr(4, x.id.length - 1)}`);
     //location.reload()
 }
