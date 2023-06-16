@@ -60,5 +60,5 @@ excluir = (item) => {
 	console.log(x)
 	console.log(`${x.id.substr(4, x.id.length - 1)}`)
     localStorage.removeItem(`${x.id.substr(4, x.id.length - 1)}`);
-    //location.reload()
+    location.reload()
 }
