@@ -57,6 +57,7 @@ window.onload = function(){
 // função para excluir um item em específico, pelo i do item clicado
 excluir = (item) => {
     var x = item.target.parentElement.parentElement;
+	console.log(x)
     localStorage.removeItem(`${x.id.substr(4, x.id.length - 1)}` + 1);
     location.reload()
 }
