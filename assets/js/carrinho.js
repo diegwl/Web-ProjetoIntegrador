@@ -13,7 +13,7 @@ window.onload = function(){
         if(p != null) 
         {	
             // exibe os dados da lista dentro da div itens
-            let section = "<section id='item'" + item + "> <img class='img_produto' src='" + p.img + "' alt=''>"+
+            let section = "<section id='item" + item + "'> <img class='img_produto' src='" + p.img + "' alt=''>"+
                 "<p>"+ p.qtd + " x "+
                 p.produto+ "</p>" +
                 " "+
